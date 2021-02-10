@@ -44,12 +44,12 @@ class Autograder(object):
 
         # get all _test defined methods
         for (name, method) in inspect.getmembers(self, predicate=inspect.ismethod):
-            if name.lower().endswith('_test'):
+            if name.lower().strip().endswith('_test'):
                 self.before_each()
                 note, message, stdout, stderr = method()
                 name = method.__doc__ or method.__name__
                 total += note
-                notes[method.__name__.rstrip('_test')] = {
+                notes[method.__name__[:-5]] = {
                     'name': name,
                     'grade': note,
                     'message': message

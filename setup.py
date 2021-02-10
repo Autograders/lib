@@ -22,7 +22,7 @@ README = (pathlib.Path(__file__).parent / "README.md").read_text()
 setuptools.setup(
     license='Apache-2.0',
     name='pygraders',
-    version='1.0.1',
+    version='1.0.2',
     author='Andrés Castellanos',
     author_email='andres.cv@galileo.edu',
     description='Autograders Python3 Library',
