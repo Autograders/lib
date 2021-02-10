@@ -34,7 +34,7 @@ class Autograder(object):
         dict
             Submit result
         '''
-        notes = {}
+        details = {}
         stdouts = ''
         stderrs = ''
         total = 0
@@ -49,7 +49,7 @@ class Autograder(object):
                 note, message, stdout, stderr = method()
                 name = method.__doc__ or method.__name__
                 total += note
-                notes[method.__name__[:-5]] = {
+                details[method.__name__[:-5]] = {
                     'name': name,
                     'grade': note,
                     'message': message
@@ -68,7 +68,7 @@ class Autograder(object):
         self.tear_down()
         return {
             'grade': min(round(total), 100),
-            'grades': notes,
+            'details': details,
             'stdout': stdouts.rstrip(),
             'stderr': stderrs.rstrip()
         }
