@@ -66,9 +66,18 @@ class Autograder(object):
 
         # tear down test suite
         self.tear_down()
+
+        # convert details to array
+        finalDetails = []
+        if getattr(self, 'order', None) is not None:
+            for key in self.order:
+                finalDetails.append(details[key])
+        else:
+            finalDetails = list(details.values())
+
         return {
             'grade': min(round(total), 100),
-            'details': details,
+            'details': finalDetails,
             'stdout': stdouts.rstrip(),
             'stderr': stderrs.rstrip()
         }
