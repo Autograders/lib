@@ -2,4 +2,4 @@
 
 # Autograders Python3 Library
 
-[![License](https://img.shields.io/github/license/autograders/lib)](https://github.com/Autograders/lib/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/autograders/lib)](https://github.com/Autograders/lib/blob/master/LICENSE) [![version](https://img.shields.io/pypi/v/pygraders)](https://pypi.org/project/pygraders/)
